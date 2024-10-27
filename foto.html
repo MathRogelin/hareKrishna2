@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto</title>
+    <style>
+        body{
+            background-color: rgba(0, 0, 0, 0.73);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        img{
+            width: 50%;
+            position: absolute;
+        }
+        img:hover{
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <img src="" alt="" id="fotoSelecionada">
+    <script>
+        // Pega o parâmetro 'img' da URL
+        const urlParams = new URLSearchParams(window.location.search)
+        const imgSrc = urlParams.get('img')
+
+        // Exibe a imagem correspondente
+        const imgElement = document.querySelector('#fotoSelecionada')  // Supondo que você tenha uma tag img com esse id
+        if (imgSrc) {
+            imgElement.src = decodeURIComponent(imgSrc)
+        } else {
+            console.log('Nenhuma imagem foi passada pela URL.')
+        }
+
+    </script>
+</body>
+</html>

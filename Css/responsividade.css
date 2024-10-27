@@ -1,0 +1,6 @@
+@media (max-width:900px) {
+    .flex_container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
